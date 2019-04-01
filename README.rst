@@ -15,7 +15,10 @@ The audio player receive opus encoded frame, decode it and play the PCM decoded 
 Hardware Requirements
 ************
 rf52840 DK board
-Audio Adaptor Board for Teensy 3.0 - 3.6 : https://www.pjrc.com/store/teensy3_audio.html
+
+Optionnal : 
+
+SGTL5000 Audio Adaptor Board for Teensy 3.0 - 3.6 : https://www.pjrc.com/store/teensy3_audio.html
 
 
 Building and Running
@@ -28,14 +31,19 @@ Get the zephyr fork :
 git clone https://github.com/zephyrproject-rtos/zephyr.git
 checkout nrf52_audio_opus_sgtl5000
 
+To use audio frame from a real SGTL5000 audio codec, enable it in overlay-sgtl5000.conf : CONFIG_AUDIO_CODEC_SGTL5000=y
+
+
 
 To compile the Audio player
+
 .. zephyr-app-commands::
    :zephyr-app: nrf52_audio_opus_sgtl5000
    :board: nrf52840_pca10056
    :conf: "prj.conf overlay-cpustats.conf overlay-audio.conf overlay-oled.conf overlay-sgtl5000.conf"
 
 To compile the Audio recorder
+
 .. zephyr-app-commands::
    :zephyr-app: nrf52_audio_opus_sgtl5000
    :board: nrf52840_pca10056
