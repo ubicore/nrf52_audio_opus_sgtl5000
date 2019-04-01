@@ -1,0 +1,26 @@
+# Kconfig - Private config options for echo-server sample app
+
+#
+# Copyright (c) 2018 Intel Corporation
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+mainmenu "Audio demo sample application"
+
+config AUDIO_CODEC_SGTL5000
+	bool "Use I2S audio codec SGTL5000"
+	default n
+	help
+	  SGTL5000 is an HW I2S audio codec.
+
+
+config AUDIO_CODEC_RECORDER
+	bool "Audio type : recorder"
+	default n
+	help
+	  Select if type is recorder ? else is streamer.
+
+
+
+source "Kconfig.zephyr"
